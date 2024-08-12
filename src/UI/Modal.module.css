@@ -1,17 +1,40 @@
 .modal {
     position: fixed;
-	border-radius: 14px;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-	z-index: 30;
-	animation: slide-down 300ms ease-out forwards;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    z-index: 30;
+    background-color: #fff;
+    animation: slide-down 300ms ease-out forwards;
+    width: 90%;
+    max-width: 500px; /* Adjust as needed */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* To avoid content spilling out */
+    border: 1px solid #ddd; /* Subtle border */
 }
 
 .backdrop {
     position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-	z-index: 20;
-	background-color: rgba(0, 0, 0, 0.75);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly lighter for less intense effect */
+    backdrop-filter: blur(5px); /* Adds a blur effect to the backdrop */
+}
+
+/* Animation */
+@keyframes slide-down {
+    from {
+        transform: translate(-50%, -60%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
 }
